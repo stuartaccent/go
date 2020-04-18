@@ -1,0 +1,30 @@
+{{define "pwresetHTML"}}
+<!DOCTYPE html>
+<html>
+{{template "headHTML" "Password Reset"}}
+<body>
+    <div class="full-visual-height d-flex align-items-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-md-5 offset-md-2">
+                    <h1>Reset my password</h1>
+                    <p>Please use the below form by providing a valid email address to reset your password.</p>
+                    <form method="POST">
+                        <div class="icon-input full-width">
+                            <input type="email" name="email" value="{{ .Form.Email }}" placeholder="email">
+                            <span class="fa fa-at c-primary"></span>
+                        </div>
+                        {{ with .Form.Errors.Email }}
+                        <p class="c-red">{{ . }}</p>
+                        {{ end }}
+                        <div class="d-flex align-items-center">
+                            <button type="submit" class="button button-primary">Reset my password</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{{end}}

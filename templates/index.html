@@ -1,0 +1,17 @@
+{{define "indexHTML"}}
+<!DOCTYPE html>
+<html>
+{{template "headHTML" ""}}
+<body>
+    <div class="container">
+        <h1>Home</h1>
+        <p>Eros congue neque laoreet placerat leo, convallis tincidunt congue velit fringilla augue eros, platea vulputate ullamcorper congue tempus, risus habitant. Sit fusce nibh conubia auctor, justo natoque platea sem mi dolor adipiscing, enim parturient malesuada nonummy. Dignissim vehicula lobortis posuere in phasellus, faucibus nostra molestie cubilia hymenaeos, fermentum ullamcorper aenean sapien urna, libero leo malesuada aptent. Nisi consequat nulla elit nascetur, porta lacinia consequat phasellus, nec congue conubia vivamus, neque malesuada per donec.</p>
+        <p>Nullam morbi litora dictumst tortor lacus viverra, nostra eu accumsan id integer dis auctor tempor, morbi lectus. Nam nec senectus etiam, vehicula imperdiet venenatis hymenaeos nisi, nec primis scelerisque blandit sagittis posuere, pede feugiat nam lectus. Pretium ad eget proin, nisi consequat habitant dignissim dui, lacus condimentum consequat nunc mus ullamcorper, nisi sem porta. Pharetra diam vehicula pretium habitant rhoncus, rutrum parturient sed tristique viverra sed, donec cum fringilla donec torquent. Facilisi massa magnis ridiculus vehicula blandit nunc, amet non orci aenean, cum mollis pellentesque diam parturient habitasse,. Magna nam erat.</p>
+        <ul>
+            <li>{{if .User}}<a href="/auth/logout">Logout</a>{{else}}<a href="/auth/login">Login</a>{{end}}</li>
+            <li><a href="/restricted">Restricted</a></li>
+        </ul>
+    </div>
+</body>
+</html>
+{{end}}

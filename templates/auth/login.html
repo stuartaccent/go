@@ -1,0 +1,37 @@
+{{define "loginHTML"}}
+<!DOCTYPE html>
+<html>
+{{template "headHTML" "Login"}}
+<body>
+    <div class="full-visual-height d-flex align-items-center">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col col-md-5 offset-md-2">
+                    <h1>Login to get started</h1>
+                    <form method="POST">
+                        <div class="icon-input full-width">
+                            <input type="email" name="email" value="{{ .Form.Email }}" placeholder="email">
+                            <span class="fa fa-at c-primary"></span>
+                        </div>
+                        {{ with .Form.Errors.Email }}
+                        <p class="c-red">{{ . }}</p>
+                        {{ end }}
+                        <div class="icon-input full-width">
+                            <input type="password" name="password" placeholder="password">
+                            <span class="fa fa-unlock-alt c-primary"></span>
+                        </div>
+                        {{ with .Form.Errors.Password }}
+                        <p class="c-red">{{ . }}</p>
+                        {{ end }}
+                        <div class="d-flex align-items-center">
+                            <button type="submit" class="button button-primary">Login</button>
+                            <a href="/auth/password/reset" class="ml-auto">Forgotten your password?</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+{{end}}

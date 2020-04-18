@@ -1,0 +1,17 @@
+{{define "headHTML"}}
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Example.com{{if .}} | {{.}}{{end}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/css/karma.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/karma-components.min.css">
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/service-worker.js');
+          });
+        }
+    </script>
+</head>
+{{end}}
